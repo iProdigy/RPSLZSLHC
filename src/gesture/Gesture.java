@@ -1,5 +1,8 @@
-package game.gesture;
+package gesture;
 
+/**
+ * Enum representation of all Gestures within the game
+ */
 public enum Gesture {
     ROCK("Rock"),
     PAPER("Paper"),
@@ -19,7 +22,13 @@ public enum Gesture {
         return label;
     }
 
+    /**
+     * Uses the Gesture order hierarchy to check if this Gesture beats the passed Gesture
+     *
+     * @param other the gesture to be compared to
+     * @return true if this Gesture beats the passed, false otherwise
+     */
     public boolean beats(Gesture other) {
-        return GestureOrder.getHierarchy().get(this).containsValue(other);
+        return GestureOrder.getHierarchy().get(this).containsKey(other);
     }
 }
