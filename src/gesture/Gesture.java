@@ -4,15 +4,20 @@ package gesture;
  * Enum representation of all Gestures within the game
  */
 public enum Gesture {
-    ROCK("Rock"),
-    PAPER("Paper"),
-    SCISSORS("Scissors"),
-    LIZARD("Lizard"),
-    ZOMBIE("Zombie"),
-    SPOCK("Spock"),
+    ROCK,
+    PAPER,
+    SCISSORS,
+    LIZARD,
+    ZOMBIE,
+    SPOCK,
     LHC("Large Hadron Collider");
 
     private String label;
+
+    Gesture() {
+        final String name = this.name();
+        this.label = name.charAt(0) + name.toLowerCase().substring(1);
+    }
 
     Gesture(String label) {
         this.label = label;
